@@ -1,1 +1,6 @@
-# My LeetCode Resolution [Golang]
+# My LeetCode Solutions [Golang]
+
+Just run
+```shell
+$ go test -v
+```
