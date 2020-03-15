@@ -7,8 +7,8 @@ type SliceList []interface{}
 func (l *SliceList) Len() int { return len(*l) }
 
 // Push method
-func (l *SliceList) Push(v interface{}) {
-	*l = append(*l, v)
+func (l *SliceList) Push(v ...interface{}) {
+	*l = append(*l, v...)
 }
 
 // Pop method
