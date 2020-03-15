@@ -87,19 +87,16 @@ func (t *TreeNode) InorderTraverse(cb traverseNode) {
 
 	// Non-recursion: use Stack
 	stack := SliceList{}
-	tp := t
 
-	for tp != nil || stack.Len() > 0 {
-		for tp != nil {
-			stack.Push(tp)
-			tp = tp.Left
+	for t != nil || stack.Len() > 0 {
+		for t != nil {
+			stack.Push(t)
+			t = t.Left
 		}
-		v := stack.Pop()
-		var ok bool
-		tp, ok = v.(*TreeNode)
-		if ok {
-			cb(tp)
-			tp = tp.Right
+		t, _ = stack.Pop().(*TreeNode)
+		if t != nil {
+			cb(t)
+			t = t.Right
 		}
 	}
 }
